@@ -555,7 +555,7 @@ const NumberBoxMask = NumberBoxBase.inherit({
         const $input = this._input();
 
         eventsEngine.on($input, addNamespace(INPUT_EVENT, NUMBER_FORMATTER_NAMESPACE), function(e) {
-            if(!e.isComposing) {
+            if(!e.originalEvent.isComposing) {
                 this._formatValue(e);
                 this._isValuePasted = false;
             }
